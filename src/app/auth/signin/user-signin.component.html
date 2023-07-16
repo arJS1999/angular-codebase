@@ -1,0 +1,32 @@
+
+<form [formGroup]="signinForm" (ngSubmit)="signin()" class="form-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>SignIn</mat-card-title>
+      </mat-card-header>
+      <br>
+      <mat-card-content>
+  
+            
+  <mat-form-field appearance="outline" class="full-width">
+             <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="email && email.invalid">{{EmailError()}}</mat-error>
+            
+    </mat-form-field>
+  
+  
+      <mat-form-field appearance="outline"   class="full-width">
+                 <mat-label>Password</mat-label>
+                 <input matInput  [type]="hide ? 'password' : 'text'" formControlName="password">
+                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                 <mat-error *ngIf="password && password.invalid">{{PasswordError()}}</mat-error>
+            </mat-form-field>
+  
+  
+            <button mat-raised-button color="primary">Submit</button>
+             <button mat-raised-button color="primary" style="float:right"  routerLink="signup">New User?</button>
+      </mat-card-content>
+    </mat-card>
+  </form>
+  

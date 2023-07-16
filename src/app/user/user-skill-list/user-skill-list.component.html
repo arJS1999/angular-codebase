@@ -1,0 +1,51 @@
+<h1 *ngIf="userSkillList.length == 0" class="blink">
+    There is no Skills added yet!
+  </h1>
+<table
+  *ngIf="userSkillList.length > 0"
+  mat-table
+  #elseBlock
+  [dataSource]="userSkillList"
+  class="mat-elevation-z8"
+>
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Skills">
+    <th mat-header-cell *matHeaderCellDef>Skills</th>
+    <td mat-cell *matCellDef="let element">{{ element.skills }}</td>
+  </ng-container>
+
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let data; columns: displayedColumns"></tr>
+</table>
+<br/>
+{{name}}
+
+<mat-progress-spinner
+  *ngIf="this.userSkillList.length == 0"
+  class="center"
+  [color]="color"
+  [mode]="mode"
+  [value]="value"
+>
+</mat-progress-spinner>
+<mat-progress-spinner
+  *ngIf="this.userSkillList.length == 0"
+  class="center"
+  [color]="color"
+  [mode]="mode"
+  [value]="value"
+>
+</mat-progress-spinner>
+<mat-progress-spinner
+  *ngIf="this.userSkillList.length == 0"
+  class="center"
+  [color]="color"
+  [mode]="mode"
+  [value]="value"
+>
+</mat-progress-spinner>

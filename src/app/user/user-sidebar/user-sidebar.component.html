@@ -1,0 +1,35 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+      <mat-list>
+        <h1 mat-subheader style="margin-left: 10%;">Dashboard</h1>
+        <br />
+        <mat-list-item
+          ><a routerLink="list"
+            ><fa-icon [icon]="faList" class="icon"></fa-icon>User List</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          ><a routerLink="skillList"
+            ><fa-icon [icon]="faList" class="icon"></fa-icon>list</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          ><a routerLink="skill"
+            ><fa-icon [icon]="faCode" class="icon"></fa-icon>Skill</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          ><a routerLink="chat"
+            ><fa-icon [icon]="faChat" class="icon"></fa-icon>Chat</a
+          ></mat-list-item
+        >
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

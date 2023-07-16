@@ -1,0 +1,15 @@
+.center{
+    margin: auto;
+}
+
+.blink {
+    animation: blinker 1s infinite;
+    color: red;
+    text-align: center;
+}
+  
+@keyframes blinker {
+    from { opacity: 8.0; }
+    50% { opacity: 0; }
+    to { opacity: 8.0; }
+}

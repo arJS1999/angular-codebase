@@ -1,0 +1,53 @@
+<form
+  [formGroup]="userProfileForm"
+  (ngSubmit)="onSubmit()"
+  class="form-container"
+>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Register User</mat-card-title>
+    </mat-card-header>
+    <br />
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+        <mat-error *ngIf="name && name.invalid">{{
+          UserNameError()
+        }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="email && email.invalid">{{
+          UserEmailError()
+        }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" />
+        <mat-error *ngIf="password && password.invalid">{{
+          UserPasswordError()
+        }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <ngx-mat-file-input formControlName="image"></ngx-mat-file-input>
+        <br />
+        <mat-error *ngIf="image && image.invalid">{{
+          UserImageError()
+        }}</mat-error>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+      >
+        Submit
+      </button>
+      <button mat-raised-button color="primary" style="float:right" routerLink="">Already have an account?</button>
+    </mat-card-content>
+  </mat-card>
+</form>

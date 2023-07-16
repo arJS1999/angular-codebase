@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <span style="margin-left: 3%">User Profile</span>
+    <span class="example-spacer"></span>
+    <!-- <ngx-avatar size="50" name={{getUserName()}} matTooltip={{getUserName()}}></ngx-avatar> -->
+    <button
+      mat-icon-button
+      class="logout-icon"
+      (click)="logout()"
+      aria-label="logout icon"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div style="margin: 5%">
+    <router-outlet></router-outlet>
+  </div>
+  
